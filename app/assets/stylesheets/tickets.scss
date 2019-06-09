@@ -1,3 +1,17 @@
 // Place all the styles related to the tickets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+  border-bottom: solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.ticket-details {
+  border-bottom: 1pt solid black;
+  margin-bottom: 20px;
+}
+
+.ticket-subject a {
+  text-decoration: none;
+}
