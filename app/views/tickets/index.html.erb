@@ -1,13 +1,14 @@
 <div class="container">
+
   <div class="header">
     <h2>Zendesk Ticket viewer</h2>
   </div>
-    <p><%= will_paginate @tickets %></p>
-      <% @tickets.each do |ticket| %>
-        <div class="ticket-subject">Ticket ID: <%= ticket["id"] %> - <%= link_to ticket_path(ticket["id"]) do %><%= ticket["subject"] %>
-        </div>
-        <% end %>
+
+  <p><%= will_paginate @tickets %></p>
+  <% @tickets.each do |ticket| %>
+    <div class="ticket-subject">
+      Ticket ID: <%= ticket["id"] %> - <%= link_to ticket_path(ticket["id"]), id: ticket["id"] do %><%= ticket["subject"] %>
       <% end %>
+    </div>
+  <% end %>
 </div>
-
-
