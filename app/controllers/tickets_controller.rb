@@ -1,29 +1,38 @@
 class TicketsController < ApplicationController
-  require 'will_paginate/array'
+  before_action :set_tickets, only: %i[index show]
 
-  rescue_from StandardError, with: :api_unavailable
+  rescue_from StandardError, with: :internal_server_error
 
   def index
-    @tickets = tickets_results['tickets']
     @tickets = @tickets.paginate(page: params[:page], per_page: 25)
   end
 
   def show
-    @tickets = tickets_results['tickets']
     @ticket = @tickets[params['id'].to_i - 1]
-    if @ticket.nil?
-      flash[:error] = 'Sorry the requested ticket could not be found'
-      redirect_to root_path
-    end
+    return if @ticket
+
+    flash[:error] = 'Sorry the requested ticket could not be found'
+    redirect_to root_path
   end
 
   private
 
-  def tickets_results
-    Ticket.retrieve_tickets
+  def set_tickets
+    @tickets = Ticket.retrieve_tickets['tickets']
   end
 
-  def api_unavailable
-    render :api_unavailable
+  # For dev environment provides verbose error message
+  # In production gives the user a friendly message
+  def internal_server_error(exception)
+    if Rails.env.development?
+      response = {
+        type: exception.class.to_s,
+        message: exception.message,
+        backtrace: exception.backtrace
+      }
+      render json: response
+    else
+      render :api_unavailable
+    end
   end
 end

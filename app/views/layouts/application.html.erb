@@ -12,10 +12,12 @@
   <body>
     <div class="container">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+        <div class="alert alert-warning alert-dismissible">
+          <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <%= value %>
+        </div>
       <% end %>
       <%= yield %>
-      <% debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>

@@ -1,23 +1,29 @@
 
 <div class="container">
   <div class="header d-flex flex-row justify-content-between">
-<div><h2><%= @ticket["subject"] %></h2></div>
+    <div>
+      <h2>
+        <%= @ticket["subject"] %>
+      </h2>
+    </div>
 
-  <div><%= link_to 'Back', root_path, class: 'btn btn-primary' %></div>
+  <div href="#">
+    <%= link_to 'Back', root_path, class: 'btn btn-primary' %>
+  </div>
 </div>
 
-<div class="ticket-details d-flex flex-row justify-content-between">
-<div>
-<p>Ticket ID: <%= @ticket["id"] %></p>
- <p>Ticket status: <%= @ticket["status"].capitalize %></p>
-</div>
+  <div class="ticket-details d-flex flex-row justify-content-between">
+    <div>
+      <p>Ticket ID: <%= @ticket["id"] %>
+      </p>
+      <p>Ticket status: <%= @ticket["status"].capitalize %>
+      </p>
+    </div>
 
-<div>
-<p>Created on: <%= @ticket["created_at"].to_datetime.strftime('%d %b %Y at %H:%M:%S') %></p>
-<p>Updated at: <%= @ticket["updated_at"].to_datetime.strftime('%d %b %Y at %H:%M:%S') %></p>
-</div>
-</div>
-
-<p><strong>Description: </strong></p><p><%= @ticket["description"] %></p>
-
+    <div>
+      <p>Created on: <%= @ticket["created_at"].to_datetime.strftime('%d %b %Y at %H:%M:%S') %></p>
+      <p>Updated at: <%= @ticket["updated_at"].to_datetime.strftime('%d %b %Y at %H:%M:%S') %></p>
+    </div>
+  </div>
+  <p><strong>Description: </strong></p><p><%= @ticket["description"] %></p>
 </div>
