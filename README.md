@@ -25,7 +25,7 @@ cd zendesk
 bundle install
 touch .env
 echo ZENDESK_USERNAME = 'username provided in email to zendesk' >> .env
-ZENDESK_API_TOKEN = 'token provided in email to zendesk' >> .env
+echo ZENDESK_API_TOKEN = 'token provided in email to zendesk' >> .env
 rails server
 ```
 ## Usage instructions
