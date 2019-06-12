@@ -29,14 +29,14 @@ class TicketsTest < ApplicationSystemTestCase
     click_link('1')
     assert_selector 'p', text: 'Ticket ID: 1'
   end
+
+  test 'page 3 selector is present' do
+    visit '/'
+    assert_selector(:css, 'a[href="/?page=3"]')
+    # I wanted to test clicking the link to page 3
+    # and checking that the correct page loads
+    # but I couldn't get the below code to work correctly
+    # click_link('a[href="/?page=3"]')
+    # assert_selector '51', text: 'esse ut qui do aute'
+  end
 end
-
-#   TO DO:
-#   # unable to find the link
-#   test 'visit page 3' do
-#     visit '/'
-#     click_link('/?page=3')
-#   end
-# end
-
-# find(“a[href=‘#{edit_users_path}’]“).click

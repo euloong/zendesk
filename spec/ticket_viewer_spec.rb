@@ -18,9 +18,4 @@ describe '#ticket' do
   it 'should contain ticket id corresponding to the last ticket' do
     expect(tickets.last['id']).to eq(tickets.length)
   end
-
-  # error = { 'error' => 'Sorry the requested ticket could not be found' }
-  it 'should return an error when unknown ticket id is used' do
-    expect(tickets.find { |t| t['id'] == 999 }).to eq(nil)
-  end
 end
