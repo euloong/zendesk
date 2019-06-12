@@ -40,7 +40,7 @@ Click on the back button to return to the index view.
 ## Error handling
 If a ticket number greater than 100 is provided in the url e.g. http://localhost:3000/tickets/999, the page will redirect to the index and the following error message will appear:
 ```
- Sorry the requested ticket could not be found will appear
+ Sorry the requested ticket could not be found
 ```
 this can be cancelled by clicking on the x.
 
