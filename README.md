@@ -3,9 +3,18 @@
 ## Installation
 
 Install git if not already installed [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-check git by typying git --version in the terminal
-Use version of ruby v2.5.3 or newer [Ruby](https://www.ruby-lang.org/en/downloads/)
-check version of ruby by typing ruby -v in the terminal
+
+You can check your version of git by typing the following in the terminal:
+```
+git --version
+```
+
+Use ruby v2.5.3 or newer [Ruby](https://www.ruby-lang.org/en/downloads/)
+
+You can check your version of ruby by typing the following in the terminal:
+```
+ruby -v
+```
 
 To set up this project type the following in the terminal
 ```
@@ -20,13 +29,16 @@ ZENDESK_API_TOKEN = 'token provided in email to zendesk' >> .env
 rails server
 ```
 ## Usage instructions
-Enter http://localhost:3000/ in your web browser
-You will see a list of the first 25 tickets with their subject and a page selector
-Click on the link for each ticket to view details for each ticket
-Click on the back button to return to the index view
+Enter http://localhost:3000/ in your web browser.
+
+You will see a list of the first 25 tickets with their subject and a page selector.
+
+Click on the link for each ticket to view details for each ticket.
+
+Click on the back button to return to the index view.
 
 ## Error handling
-If a ticket number greater than 100 is provided in the url e.g. http://localhost:3000/tickets/999, the page will redirect to the index and an error message:
+If a ticket number greater than 100 is provided in the url e.g. http://localhost:3000/tickets/999, the page will redirect to the index and the following error message will appear:
 ```
  Sorry the requested ticket could not be found will appear
 ```
@@ -48,14 +60,14 @@ Sorry there was a problem connecting to the service, please try again later.
 ## How to run the test suite
 
 ### Unit tests with RSpec
-in the terminal type
+In the terminal type
 ```
 rake spec
 ```
 They can be viewed in the ticket_viewer_spec.rb file in the spec folder.
 
 ### System tests were run with Capybara and Selenium
-in the terminal type
+In the terminal type
 ```
 rails test:system
 
